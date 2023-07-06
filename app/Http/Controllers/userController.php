@@ -19,7 +19,27 @@ class userController extends Controller
             'allData'=> users::searchUserData($name)
         ]);
     }
-    public function create(){
+    public function show(){
         return view('pages.create');
+    }
+    public function store(Request $req){
+        // $name = $req->name;
+        // $email = $req->email;
+        // $state = $req->state;
+        // $address = $req->address;
+        // $dob = $req->dob;
+        // $file = $req->file;
+        // $gender = $req->gender;
+        // dd($name, $email, $state, $address, $dob, $gender, $file);
+        $formFields = $req->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'state'=>'required',
+            'address'=>'required',
+            'dob'=>'required',
+            'file'=>'required',
+            'gender'=>['required']
+        ]);
+        // redirect('/');  
     }
 }

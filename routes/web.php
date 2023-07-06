@@ -35,6 +35,9 @@ Route::get('/', [userController::class, 'index']);
 // Get Search result of a particular User from All Data
 Route::get('/user',[userController::class, 'searchIndex']);
 
-// Create a user 
-Route::get('/user/create',[userController::class, 'create']);
+// show a create user form
+Route::get('/user/createform',[userController::class, 'show']);
+
+// post the user data
+Route::post('/user/create', [userController::class, 'store']);
 
