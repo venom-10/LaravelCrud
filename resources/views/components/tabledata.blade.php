@@ -1,13 +1,13 @@
 @props(['data'])
 
-<tr class="bg-gray-700 text-gray-400 ">
-    <td class="px-6 py-4">{{ $data->name }}</td>
-    <td class="px-6 py-4">{{ $data->email }}</td>
-    <td class="px-6 py-4">{{ $data->gender }}</td>
-    <td class="px-6 py-4">{{ $data->state }}</td>
-    <td class="px-6 py-4">{{ $data->address }}</td>
-    <td class="px-6 py-4">{{ $data->dob }}</td>
-    <td class="px-6 py-6 mt-1 flex justify-center h-full">
+<tr class="bg-gray-700 text-gray-400">
+    <td class="px-6 py-[10px]">{{ $data->name }}</td>
+    <td class="px-6 py-[10px]">{{ $data->gender }}</td>
+    <td class="px-6 py-[10px]">{{ $data->email }}</td>
+    <td class="px-6 py-[10px]">{{ $data->state }}</td>
+    <td class="px-6 py-[10px]">{{ $data->address }}</td>
+    <td class="px-6 py-[10px]">{{ $data->dob }}</td>
+    <td class="px-6 py-[10px] w-full flex items-center justify-center mt-[10px]">
         <a href='/'
             class="text-gray-400 font-semibold hover:text-green-600">Edit</a>
         <button id="dropdownDefaultButton" data-dropdown-toggle="delete_Dropdown"
@@ -20,5 +20,5 @@
         <a href='/'
             class=" ml-2 font-semibold hover:text-green-700">Add photo</a>
     </td>
-    <td class="px-6 py-4 text-center"> <img class="w-10 h-10 rounded-full" src="https://imgv3.fotor.com/images/side/3D-pink-hair-girl-image-with-generate-box.jpg" alt="user photo"> </td>
+    <td class="px-6 py-[10px] text-center"> <img class="w-10 h-10 rounded-full" src="https://imgv3.fotor.com/images/side/3D-pink-hair-girl-image-with-generate-box.jpg" alt="user photo"> </td>
 </tr>

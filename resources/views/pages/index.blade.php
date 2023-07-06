@@ -3,6 +3,7 @@
 @section('content')
 
     <div class='w-full h-full px-[20px] pt-[80px]'>
+
         @if (count($allData) == 0)
             <h1>No data</h1>
         @else
@@ -45,14 +46,13 @@
                     <tbody>
                         @foreach ($allData as $data)
                             <x-tabledata :data='$data' />
-                            {{-- <x-tabledata :data='$data'/>
-                        <x-tabledata :data='$data'/>
-                        <x-tabledata :data='$data'/> --}}
                         @endforeach
                     </tbody>
                 </table>
             </div>
+            @include('partials.paginateButton')
         @endif
     </div>
+
 
 @endsection
