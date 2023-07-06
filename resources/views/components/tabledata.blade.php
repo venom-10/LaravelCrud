@@ -20,5 +20,5 @@
         <a href='/'
             class=" ml-2 font-semibold hover:text-green-700">Add photo</a>
     </td>
-    <td class="px-6 py-[10px] text-center"> <img class="w-10 h-10 rounded-full" src="https://imgv3.fotor.com/images/side/3D-pink-hair-girl-image-with-generate-box.jpg" alt="user photo"> </td>
+    <td class="px-6 py-[10px] text-center"> <img class="w-10 h-10 rounded-full" src="{{ $data->imagepath ? asset('storage/uploads/'.$data->imagepath) : asset('assets/images/default.jpg') }}" alt="user photo"> </td>
 </tr>

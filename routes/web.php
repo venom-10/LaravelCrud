@@ -40,4 +40,3 @@ Route::get('/user/createform',[userController::class, 'show']);
 
 // post the user data
 Route::post('/user/create', [userController::class, 'store']);
-

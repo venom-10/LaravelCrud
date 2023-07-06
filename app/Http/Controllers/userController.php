@@ -45,10 +45,10 @@ class userController extends Controller
                 },
             ],
         ]);
-        if ($req->hasFile('key')) {
+        if ($req->hasFile('file')) {
             $file = $req->file('file');
             $newFileName = $req->name . '_' . $req->email . '.png';
-            $file->storeAs('uploads', $newFileName, 'local');
+            $file->storeAs('public/uploads', $newFileName, 'local');
             $formFields['imagepath'] = $newFileName;
         }
         users::create($formFields);
