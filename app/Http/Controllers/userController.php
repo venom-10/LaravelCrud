@@ -4,42 +4,44 @@ namespace App\Http\Controllers;
 
 use App\Models\users;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+
 
 class userController extends Controller
 {
     public function index(){
         return view('pages.index', [
-            'allData' => users::all()
+            'allData' => DB::table('users')->paginate(4)
         ]);
     }
     public function searchIndex(Request $req){
         $name = $req->search;
         return view('pages.searchIndex', [
-            'allData'=> users::searchUserData($name)
+            // 'allData'=> users::searchUserData($name)
+            'allData'=> DB::table('users')->where('name', $name)->paginate(1)
         ]);
     }
     public function show(){
         return view('pages.create');
     }
     public function store(Request $req){
-        // $name = $req->name;
-        // $email = $req->email;
-        // $state = $req->state;
-        // $address = $req->address;
-        // $dob = $req->dob;
-        // $file = $req->file;
-        // $gender = $req->gender;
-        // dd($name, $email, $state, $address, $dob, $gender, $file);
         $formFields = $req->validate([
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|unique:users',
             'state'=>'required',
             'address'=>'required',
             'dob'=>'required',
-            'file'=>'required',
-            'gender'=>['required']
+            // 'file'=>'required',
+            'gender' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    if ($value === 'default') {
+                        $fail('The '.$attribute.' field cannot be set to "gender".');
+                    }
+                },
+            ],
         ]);
-        // redirect('/');  
+        users::create($formFields);
+        return redirect('/');
     }
 }

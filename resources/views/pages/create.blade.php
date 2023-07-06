@@ -79,13 +79,14 @@
                 <option value="Female" class=''>Female</option>
                 <option value="Other" class=''>Other</option>
             </select>
-            @error('gender')
-                <p class="text-red-500 text-xs -mt-5 mb-2">{{ $message }}</p>
-            @enderror
             <button type="submit"
-                class="text-white absolute right-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base  w-full sm:w-auto px-5 py-2.5 text-center focus:ring-blue-800">Submit</button>
-        </form>
+                class="text-white absolute bottom-0 right-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base  w-full sm:w-auto px-5 py-2.5 text-center focus:ring-blue-800">Submit</button>
 
+
+        </form>
+        @error('gender')
+            <p class="text-red-500 relative right-[200px] text-xs mt-2">{{ $message }}</p>
+        @enderror
     </div>
 
 

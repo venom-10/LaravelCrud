@@ -15,16 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
             $table->string('state');
-            $table->string('gender');
             $table->string('address');
-            $table->string('DOB');
-            $table->string('imagepath');
-            $table->string('isverified');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('gender');
+            $table->string('dob');
+            $table->string('imagepath')->nullable();
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

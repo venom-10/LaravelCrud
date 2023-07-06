@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class users extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'email', 'state', 'address', 'dob', 'gender', 'imagepath'];
 
     public static function searchUserData($name){
         $allData = self::all();

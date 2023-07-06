@@ -1,12 +1,12 @@
 @props(['data'])
 
 <tr class="bg-gray-700 text-gray-400 ">
-    <td class="px-6 py-4">{{ $data['name'] }}</td>
-    <td class="px-6 py-4">{{ $data['email'] }}</td>
-    <td class="px-6 py-4">{{ $data['gender'] }}</td>
-    <td class="px-6 py-4">{{ $data['state'] }}</td>
-    <td class="px-6 py-4">{{ $data['address'] }}</td>
-    <td class="px-6 py-4">{{ $data['dob'] }}</td>
+    <td class="px-6 py-4">{{ $data->name }}</td>
+    <td class="px-6 py-4">{{ $data->email }}</td>
+    <td class="px-6 py-4">{{ $data->gender }}</td>
+    <td class="px-6 py-4">{{ $data->state }}</td>
+    <td class="px-6 py-4">{{ $data->address }}</td>
+    <td class="px-6 py-4">{{ $data->dob }}</td>
     <td class="px-6 py-6 mt-1 flex justify-center h-full">
         <a href='/'
             class="text-gray-400 font-semibold hover:text-green-600">Edit</a>
