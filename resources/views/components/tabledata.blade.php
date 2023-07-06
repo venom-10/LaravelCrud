@@ -2,8 +2,8 @@
 
 <tr class="bg-gray-700 text-gray-400">
     <td class="px-6 py-[10px]">{{ $data->name }}</td>
-    <td class="px-6 py-[10px]">{{ $data->gender }}</td>
     <td class="px-6 py-[10px]">{{ $data->email }}</td>
+    <td class="px-6 py-[10px]">{{ $data->gender }}</td>
     <td class="px-6 py-[10px]">{{ $data->state }}</td>
     <td class="px-6 py-[10px]">{{ $data->address }}</td>
     <td class="px-6 py-[10px]">{{ $data->dob }}</td>

@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 class userController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
         return view('pages.index', [
-            'allData' => DB::table('users')->paginate(4)
+            'allData' => DB::table('users')->orderBy($req->filter ?? 'id')->paginate(4)
         ]);
     }
     public function searchIndex(Request $req)
@@ -40,7 +40,7 @@ class userController extends Controller
                 'required',
                 function ($attribute, $value, $fail) {
                     if ($value === 'default') {
-                        $fail('The ' . $attribute . ' field cannot be set to "gender".');
+                        $fail('The ' . $attribute . ' field can'."'".'t be empty.');
                     }
                 },
             ],

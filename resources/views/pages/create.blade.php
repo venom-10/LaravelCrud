@@ -10,7 +10,7 @@
             <div class="relative z-0 w-full text-black mb-6 group">
                 <input type="name" name="name"
                     class="block py-2.5 px-0 font-medium w-full bg-inherit text-md border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    autocomplete=off />
+                    autocomplete=off required/>
                 <label for="name"
                     class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:font-bold peer-focus:-translate-y-6">Name</label>
             </div>
@@ -20,7 +20,7 @@
             <div class="relative z-0 w-full mb-6 group">
                 <input type="email" name="email"
                     class="block py-2.5 px-0 font-medium w-full text-md bg-inherit border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    autocomplete=off />
+                    autocomplete=off required/>
                 <label for="email"
                     class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:font-bold peer-focus:-translate-y-6">Email</label>
             </div>
@@ -30,7 +30,7 @@
             <div class="relative z-0 w-full mb-6 group">
                 <input type="text" name="state"
                     class="block py-2.5 px-0 font-medium w-full text-md bg-inherit border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    autocomplete=off />
+                    autocomplete=off required/>
                 <label for="state"
                     class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:font-bold peer-focus:-translate-y-6">State</label>
             </div>
@@ -40,7 +40,7 @@
             <div class="relative z-0 w-full mb-6 group">
                 <input type="text" name="address"
                     class="block py-2.5 px-0 font-medium w-full text-md bg-inherit border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    autocomplete=off />
+                    autocomplete=off required/>
                 <label for="Address"
                     class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:font-bold">Address</label>
             </div>
@@ -59,7 +59,7 @@
                     </div>
                     <input datepicker datepicker-format="dd/mm/yyyy" name='dob' type="text"
                         class="bg-transparent border-2 text-sm rounded-lg block w-full pl-10 p-2.5  border-gray-700 placeholder-gray-900 font-medium text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="DD/MM/YYYY" autocomplete=off>
+                        placeholder="DD/MM/YYYY" autocomplete=off required>
                 </div>
             </div>
             @error('dob')
@@ -85,7 +85,7 @@
 
         </form>
         @error('gender')
-            <p class="text-red-500 relative right-[200px] text-xs mt-2">{{ $message }}</p>
+            <p class="text-red-500 relative right-[235px] text-xs mt-2">{{ $message }}</p>
         @enderror
     </div>
 

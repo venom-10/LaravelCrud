@@ -13,7 +13,7 @@
 <body class="overflow-x-hidden h-screen">
     <nav>
         <div class='relative w-screen h-[50px] bg-gray-600'>
-            <h1 class='absolute left-4 text-3xl font-semibold top-[6px] text-gray-50'>CRUD</h1>
+            <a href="/" class='absolute left-4 text-3xl font-semibold top-[6px] text-gray-50'>CRUD</a>
         </div>
     </nav>
 
