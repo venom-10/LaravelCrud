@@ -1,10 +1,10 @@
 @extends('layout')
-@section('title', 'Add a User')
+@section('title', 'Update')
+
 
 @section('content')
-
-    <div class="flex justify-start items-center flex-col h-full pt-10">
-        <form class='w-1/2 relative' action='/user/create' method='POST' enctype='multipart/form-data'>
+    <div class="flex justify-center items-center flex-col h-full pt-10">
+        <form class='w-1/2 relative mb-14' action='/edit?id={{$id}}' method='POST' >
             @csrf
             <div class="relative z-0 w-full text-black mb-6 group">
                 <input type="name" name="name"
@@ -14,16 +14,6 @@
                     class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:font-bold peer-focus:-translate-y-6">Name</label>
             </div>
             @error('name')
-                <p class="text-red-500 text-xs -mt-5 mb-2">{{ $message }}</p>
-            @enderror
-            <div class="relative z-0 w-full mb-6 group">
-                <input type="email" name="email"
-                    class="block py-2.5 px-0 font-medium w-full text-md bg-inherit border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    autocomplete=off required/>
-                <label for="email"
-                    class="font-medium absolute text-base  text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:font-bold peer-focus:-translate-y-6">Email</label>
-            </div>
-            @error('email')
                 <p class="text-red-500 text-xs -mt-5 mb-2">{{ $message }}</p>
             @enderror
             <div class="relative z-0 w-full mb-6 group">
@@ -64,14 +54,7 @@
             @error('dob')
                 <p class="text-red-500 text-xs -mt-5 mb-2">{{ $message }}</p>
             @enderror
-            <div class="relative z-0 w-full mb-6 group">
-                <input
-                    class="block w-full text-base  text-gray-400 border rounded-lg cursor-pointer focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400"
-                    id="file_input" name='file' type="file">
-            </div>
-            @error('file')
-                <p class="text-red-500 text-xs -mt-5 mb-2">{{ $message }}</p>
-            @enderror
+            
             <select name="gender" class='text-white w-max bg-blue-700 rounded-lg'>
                 <option value="default" class=''>Gender</option>
                 <option value="Male" class=''>Male</option>
@@ -80,13 +63,9 @@
             </select>
             <button type="submit"
                 class="text-white absolute bottom-0 right-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base  w-full sm:w-auto px-5 py-2.5 text-center focus:ring-blue-800">Submit</button>
-
-
         </form>
         @error('gender')
-            <p class="text-red-500 relative right-[235px] text-xs mt-2">{{ $message }}</p>
+            <p class="text-red-500 relative right-[235px] text-xs -mt-12">{{ $message }}</p>
         @enderror
     </div>
-
-
 @endsection

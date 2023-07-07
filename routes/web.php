@@ -40,3 +40,12 @@ Route::get('/user/createform',[userController::class, 'show']);
 
 // post the user data
 Route::post('/user/create', [userController::class, 'store']);
+
+// Edit UserForm
+Route::get('/edit', [userController::class, 'showUpdateForm']);
+
+// Save Edit User Details
+Route::post('/edit', [userController::class, 'update']);
+
+// Delete Existed User Data
+Route::get('/delete', [userController::class, 'deleteUser']);
