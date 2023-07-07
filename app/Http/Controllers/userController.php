@@ -69,29 +69,29 @@ class userController extends Controller
     }
 
     // Store or Save the Updated data of User
-    // public function update(Request $req){
-    //     $id = $req->query()['id'];
-    //     $formFields = $req->validate([
-    //         'name'=>'required',
-    //         'state'=>'required',
-    //         'address'=>'required', 
-    //         'dob'=>'required',
-    //         'gender'=>['required', function($attribute, $value, $fail){
-    //             if($value === 'default'){
-    //                 $fail('The ' . $attribute . ' field can'."'".'t be empty.');
-    //             }
-    //         }]
-    //     ]);
+    public function update(Request $req){
+        $id = $req->query()['id'];
+        $formFields = $req->validate([
+            'name'=>'required',
+            'state'=>'required',
+            'address'=>'required', 
+            'dob'=>'required',
+            'gender'=>['required', function($attribute, $value, $fail){
+                if($value === 'default'){
+                    $fail('The ' . $attribute . ' field can'."'".'t be empty.');
+                }
+            }]
+        ]);
         
-    //     $existedUser = users::find($id);
-    //     // nice one
-    //     $fields = array('name', 'state', 'address', 'dob', 'gender');
-    //     foreach($fields as $field){
-    //         $existedUser[$field] = $formFields[$field];
-    //     }
-    //     $existedUser->save();
-    //     return redirect('/');
-    // }
+        $existedUser = users::find($id);
+        // nice one
+        $fields = array('name', 'state', 'address', 'dob', 'gender');
+        foreach($fields as $field){
+            $existedUser[$field] = $formFields[$field];
+        }
+        $existedUser->save();
+        return redirect('/');
+    }
 
     // Delete User from Database
     // public function deleteUser(Request $req){
