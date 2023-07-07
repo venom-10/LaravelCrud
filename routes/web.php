@@ -2,7 +2,7 @@
 
 use App\Models\users;
 use Illuminate\Http\Request;
-use App\Http\Controllers\userAuth;
+use App\Http\Controllers\userAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 
@@ -56,13 +56,13 @@ Route::get('/delete', [userController::class, 'deleteUser']);
 // userAuth Controller
 
 // Show Register Form
-Route::get('/registerForm', [userAuth::class, 'registerForm']);
+Route::get('/registerForm', [userAuthController::class, 'registerForm']);
 
 // Handle Register user req
-Route::post('/register', [userAuth::class, 'handleRegisterReq']);
+Route::post('/register', [userAuthController::class, 'handleRegisterReq']);
 
 // Show Login Form
-Route::get('/loginForm', [userAuth::class, 'loginForm']);
+Route::get('/loginForm', [userAuthController::class, 'loginForm']);
 
 // Handle User log in req
-Route::post('/login', [userAuth::class, 'handleLoginReq']);
+Route::post('/login', [userAuthController::class, 'handleLoginReq']);

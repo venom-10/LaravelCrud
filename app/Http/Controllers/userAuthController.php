@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\user_auth;
+use App\Models\userauth;
 
-class userAuth extends Controller
+class userAuthController extends Controller
 {
     // Show User registration Form (get)
     public function registerForm()
@@ -18,10 +18,10 @@ class userAuth extends Controller
         $password = $req->password;
         $formFields = $req->validate([
             'name' => 'required',
-            'email' => 'required|unique:user_auth',
+            'email' => 'required|unique:userauths',
             'password' => [
-                'required', 'min:8',
-                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+                'required', 'min:6',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]+$/'
             ],
             'cpassword' => ['required', function ($attribute, $value, $fail) use ($password) {
                 if ($value !== $password) {
@@ -30,7 +30,8 @@ class userAuth extends Controller
             }],
         ]);
         $formFields['password'] = bcrypt($formFields['password']);
-        user_auth::create($formFields);
+        userauth::create($formFields);
+        return redirect('/loginForm');
     }
 
     // Show User Login Form (get)
@@ -42,6 +43,11 @@ class userAuth extends Controller
     // Handle User Login Request(post)
     public function handleLoginReq(Request $req)
     {
-        dd($req);
+        // dd($req->email, $req->password);
+        $formFields = $req->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+        dd(auth()->attempt($formFields));
     }
 }
