@@ -2,6 +2,7 @@
 
 use App\Models\users;
 use Illuminate\Http\Request;
+use App\Http\Controllers\userAuth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 
@@ -49,3 +50,19 @@ Route::post('/edit', [userController::class, 'update']);
 
 // Delete Existed User Data
 Route::get('/delete', [userController::class, 'deleteUser']);
+
+
+
+// userAuth Controller
+
+// Show Register Form
+Route::get('/registerForm', [userAuth::class, 'registerForm']);
+
+// Handle Register user req
+Route::post('/register', [userAuth::class, 'handleRegisterReq']);
+
+// Show Login Form
+Route::get('/loginForm', [userAuth::class, 'loginForm']);
+
+// Handle User log in req
+Route::post('/login', [userAuth::class, 'handleLoginReq']);
