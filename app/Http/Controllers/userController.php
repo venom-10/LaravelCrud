@@ -94,10 +94,10 @@ class userController extends Controller
     }
 
     // Delete User from Database
-    // public function deleteUser(Request $req){
-    //     $id = $req->id;
-    //     $existedUser = users::find($id);
-    //     $existedUser->delete();
-    //     return redirect('/');
-    // }
+    public function deleteUser(Request $req){
+        $id = $req->id;
+        $existedUser = users::find($id);
+        $existedUser->delete();
+        return redirect('/');
+    }
 }
