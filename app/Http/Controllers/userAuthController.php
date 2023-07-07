@@ -48,6 +48,10 @@ class userAuthController extends Controller
             'email'=>'required',
             'password'=>'required'
         ]);
-        dd(auth()->attempt($formFields));
+        if(auth()->attempt($formFields)){
+            $req->session()->regenerate();
+            return redirect('/');
+        }
+        
     }
 }
