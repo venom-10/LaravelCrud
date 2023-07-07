@@ -1,5 +1,8 @@
 @extends('layout')
 @section('title', 'Index')
+@section('profile')
+@include('partials.profile')
+@endsection
 @section('content')
 
     <div class='w-full h-full px-[20px] pt-[80px]'>
