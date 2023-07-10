@@ -54,4 +54,12 @@ class userAuthController extends Controller
         }
         
     }
+
+    // Handle User Logout Request(get)
+    public function handleLogout(Request $req){
+        auth()->logout();
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
+        return redirect('/')->with('message', 'You are log out');
+    }
 }

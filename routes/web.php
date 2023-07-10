@@ -67,3 +67,5 @@ Route::get('/loginForm', [userAuthController::class, 'loginForm']);
 // Handle User log in req
 Route::post('/login', [userAuthController::class, 'handleLoginReq']);
 
+// Handle User log out 
+Route::post('/logout', [userAuthController::class, 'handleLogout']);
