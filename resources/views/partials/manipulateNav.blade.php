@@ -31,7 +31,6 @@
             </li>
         </ul>
     </div>
-
 </form>
 <form action="multiselect.php" method='post'>
     <button id='multiselect' type="submit"

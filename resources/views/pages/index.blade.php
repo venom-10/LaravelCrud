@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Index')
 @section('profile')
-@include('partials.profile')
+    @include('partials.profile')
 @endsection
 @section('content')
 
